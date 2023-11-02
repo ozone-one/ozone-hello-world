@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ozone
+  description: |
+    ozone example repo
+  links:
+    - title: Website
+      url: http://ozone.one
+    - title: Documentation
+      url: https://docs.ozone.one
+  annotations:
+    github.com/project-slug: in2tivetech/2tive-go-hello-world
+    lighthouse.com/website-url: https://ozone.one
+spec:
+  type: library
+  owner: CNCF
+  lifecycle: experimental
