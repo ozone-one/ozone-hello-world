@@ -1,7 +1,7 @@
 # Dockerfile References: https://docs.docker.com/engine/reference/builder/
 
 # Start from the latest golang base image
-FROM ozregistry.azurecr.io/ozone-public-registry/ozoneprod/golang:1.19.2-alpine3.16 as builder
+FROM blrdbharbor.ozonecloud.ai/ozone-public-registry/ozoneprod/golang:1.19.2-alpine3.16 as builder
 
 # Set the Current Working Directory inside the container
 WORKDIR /app
@@ -28,7 +28,7 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -a -installsuffix cgo -o main .
 
 ######## Start a new stage from scratch #######
-FROM ozregistry.azurecr.io/ozone-public-registry/ozoneprod/alpine:latest
+FROM blrdbharbor.ozonecloud.ai/ozone-public-registry/ozoneprod/alpine:latest
 
 # RUN apk --no-cache add ca-certificates
 
